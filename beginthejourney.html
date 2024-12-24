@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begin Your Journey</title>
+    <style>    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-icon {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        z-index: 1000; /* Ensure the icon is above other content */
+    }
+
+    .home-icon:hover {
+   background: #0056b3;
+    }   body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .options-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            margin-top: 40px;
+        }
+        .region-option {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex: 1 0 300px; /* Flex item will grow and shrink, with a base width of 300px */
+            max-width: 300px; /* Set maximum width for flexibility */
+        }
+        .region-option:hover {
+            transform: translateY(-5px);
+        }
+       .region-option img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 500px; /* Set the width of the image */
+    height: 400px; /* Maintain aspect ratio */
+}
+
+        .region-option h1 {
+            margin: 0; /* Remove default margin for h1 */
+        }
+         
+    .typing-text {
+    font-size: 40px; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    color: #333;
+    text-align: center;
+    margin-top: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+  /* The typewriter cursor */
+    animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+    </style>
+</head>
+<body>
+    
+<a href="index.php" class="home-icon">🏠</a>
+  <div class="typing-text" id="typing-text"style="font-size: 3rem; font-weight: bold;">
+
+        <u><h2></h2></u></div>
+    <h1><b>Begin Your Journey</h1>
+  <div class="options-container">   
+        <div class="region-option" onclick="selectRegion('North')">
+            <img src="North india.jpg" alt="North India">
+            <h1>North India</h1><ul>
+            <a href="Rajasthan.html"><h2><li>Rajasthan</li></h2></a>
+            <a href="Jammu-Kashmir.html"><h2><li>Jammu-Kashmir</li></h2></a>
+            <a href="Punjab.html"><h2><li>Punjab</li></h2></a></ul>
+        </div>
+        <div class="region-option" onclick="selectRegion('South')">
+            <img src="south india.jpg" alt="South India">
+            <h1>South India</h1><ul>
+             <a href="kerala_itini.html"><h2><li>Kerela</li></h2></a>
+               <a href="andhra_itin.html"><h2><li>Andhrapradesh</li></h2></a>
+             <a href="goa_itin.html"><h2><li>Goa</li></h2></a></ul>
+        </div>
+    </div>
+    <div class="options-container">
+        <div class="region-option" onclick="selectRegion('East')">
+            <img src="East india.jpg" alt="East India">
+            <h1>East India</h1>
+            <a href="Sikkim.php"><h2><li>Sikkim</li></h2></a>
+             <a href="Odissa.php"><h2><li>Odissa</li></h2></a>
+         <a href="Assam.php"><h2><li>Assam</li></h2></a></ul>
+        </div>
+        <div class="region-option" onclick="selectRegion('West')">
+            <img src="West india.jpg" alt="West India">
+            <h1>West India</h1><ul>
+            <a href="mah_itin.html"><h2><li>Maharasthra</li></h2></a>
+            <a href="guj_itin.html"><h2><li>Gujarat</li></h2></a>
+            </ul>
+        </div>
+    </div>
+    <form id="regionForm" action="tour_options.php" method="post">
+        <input type="hidden" id="selectedRegion" name="region">
+    </form>
+    <script>
+        function selectRegion(region) {
+            document.getElementById("selectedRegion").value = region;
+            document.getElementById("regionForm").submit();
+        }
+ text =  "Welcome to India";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100); // Adjust the typing speed (milliseconds)
+    }
+  }
+
+  // Start typing when the page loads
+  window.onload = function() {
+    typeWriter();
+  };
+    </script>
+</body>
+</html>

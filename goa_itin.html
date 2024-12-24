@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goa Tour Guide</title>
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-icon {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        z-index: 1000; /* Ensure the icon is above other content */
+    }
+
+    .home-icon:hover {
+   background: #0056b3;
+    }
+    .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .itinerary {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .show {
+            display: block;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    
+    
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+  .state {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Hide any overflowing content */
+    padding: 20px;
+  }
+  .state h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #333;
+  }
+  .state p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+  .image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .slideshow {
+    display: flex;
+    animation: slide 35s linear infinite; /* Adjust the duration as needed */
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Move the slideshow to the left */
+    }
+  }
+  .image-container img {
+    width: 500px; /* Set a fixed width for the images */
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent images from shrinking */
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 20px;
+  }
+  .link-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .link-btn:hover {
+    background-color: #ff4338;
+  }
+   .book-tour-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  
+  }
+  .book-tour-btn:hover {
+    background-color: #ff4338;
+  }
+  .booking-form {
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }  .booking-form input[type="text"],
+  .booking-form input[type="email"],
+  .booking-form input[type="date"],
+  .booking-form button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    
+  }
+    .fade-in-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fade 5s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+   @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  
+    .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+   .typing-text {
+    font-size: 40px; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    color: #333;
+    text-align: center;
+    margin-top: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange; /* The typewriter cursor */
+    animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+  
+</style>
+</head>
+
+<body>
+      <a href="index.php" class="home-icon">🏠</a>
+
+    <div class="state">
+
+ 
+  <div class="typing-text" id="typing-text"style="font-size: 3rem; font-weight: bold;">
+  
+   </div>
+
+  <div class="image-container">
+    <div class="slideshow">
+      <img src="go1.jpeg" alt="go1">
+      <img src="go2.jpeg" alt="go2">
+      <img src="go3.jpeg" alt="go3">
+       <img src="go4.jpeg" alt="go4">
+      <img src="go5.jpeg" alt="go5">
+      <img src="go6.jpeg" alt="go6">
+      <img src="goa1.jpeg" alt="goa1">
+      <img src="goa2.jpeg" alt="goa2">
+      <img src="goa3.jpeg" alt="goa3">
+      
+
+    </div>  </div>
+  
+    
+    <p> Goa can be the perfect destination for a short holiday. Its sandy beaches and sunny weather attract people from across the globe. </p>
+    </div>
+    <div class="container">
+        <div class="button-container">
+            <button class="button" id="toggleItineraryBtn">Show Itinerary</button>
+        </div>
+        <div id="itinerary" class="itinerary">
+       <div class="day">
+     
+  
+     
+                <h2 >Day 1: Arrival in Goa</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Fly to Goa International Airport (Dabolim Airport).</p>
+                    <p><strong>Mode of Transport:</strong> Taxi from airport to hotel</p>
+                    <p><strong>Best Time to Visit:</strong> October to March</p>
+                    <p><strong>Description:</strong> Arrive in Goa and check into your hotel or resort. Relax and enjoy the beaches or explore the local markets and nightlife.</p>
+                    <ul>
+                        <li>Check-in at hotel/resort</li>
+                        <li>Relax at the nearest beach</li>
+                        <li>Visit local markets for shopping</li>
+                        <li>Experience Goa's nightlife</li>
+                    </ul>
+                </div>
+          
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 2: North Goa Exploration</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from your hotel in North Goa.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Scooter</p>
+                    <p><strong>Best Time to Visit:</strong> November to February</p>
+                    <p><strong>Description:</strong> Explore the vibrant and lively beaches of North Goa. Visit famous landmarks and indulge in water sports activities.</p>
+                    <ul>
+                        <li>Visit Calangute Beach</li>
+                        <li>Explore Fort Aguada</li>
+                        <li>Relax at Anjuna Beach</li>
+                        <li>Enjoy water sports at Baga Beach</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 3: South Goa Delights</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from your hotel in South Goa.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> October to February</p>
+                    <p><strong>Description:</strong> Explore the serene and pristine beaches of South Goa. Discover the rich heritage and tranquility of this region.</p>
+                    <ul>
+                        <li>Visit Palolem Beach</li>
+                        <li>Explore Dudhsagar Waterfalls (Jeep Safari)</li>
+                        <li>Discover Old Goa - Churches and Basilicas</li>
+                        <li>Relax at Agonda Beach</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 4: Adventure and Nature</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive to your adventure spots.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Adventure Tour</p>
+                    <p><strong>Best Time to Visit:</strong> November to February</p>
+                    <p><strong>Description:</strong> Engage in thrilling adventures and explore the natural beauty of Goa's hinterland.</p>
+                    <ul>
+                        <li>Go for a Jungle Trek in Mollem National Park</li>
+                        <li>Visit Spice Plantations for a tour</li>
+                        <li>Experience Kayaking in the backwaters</li>
+                        <li>Enjoy a Sunset Cruise on Mandovi River</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 5: Departure from Goa</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive to Goa International Airport (Dabolim Airport).</p>
+                    <p><strong>Mode of Transport:</strong> Taxi from hotel to airport</p>
+                    <p><strong>Best Time to Visit:</strong> Anytime</p>
+                    <p><strong>Description:</strong> Pack your memories and depart from Goa with unforgettable experiences.</p>
+                    <ul>
+                        <li>Check-out from hotel</li>
+                        <li>Shopping for souvenirs</li>
+                        <li>Transfer to Goa Airport</li>
+                        <li>Safe Journey back home</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+
+ <button id="goa-btn" class="book-tour-btn" onclick="toggleBookingForm('goa')">Book Goa Tour</button>
+ 
+  <div id="goa-booking-form" class="booking-form">
+       
+
+    <?php include 'Save_booking.php'; ?>
+    <h3>Goa Tour Booking Form</h3>
+   
+<form id="bookForm" action="payments.php" method="post">
+
+
+     
+
+        <button type="submit">Book Now</button>
+    </form>
+</div>
+
+
+
+
+
+    </div>
+    <script> 
+        
+     document.getElementById('toggleItineraryBtn').addEventListener('click', function() {
+            var itinerary = document.getElementById('itinerary');
+            itinerary.classList.toggle('show');
+        });  
+        function toggleBookingForm(city) {
+    const bookingForm = document.getElementById(city + "-booking-form");
+    if (bookingForm.style.display === "none") {
+      bookingForm.style.display = "block";
+    } else {
+      bookingForm.style.display = "none";
+    }
+  }
+  text =  "Welcome to Goa";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100); // Adjust the typing speed (milliseconds)
+    }
+  }
+
+ // Start typing when the page loads
+  window.onload = function() {
+    typeWriter();
+    };
+</script>
+</body>
+
+    </html>

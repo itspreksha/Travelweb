@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kerala Tour Guide</title>
+<style>  body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-icon {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        z-index: 1000; /* Ensure the icon is above other content */
+    }
+
+    .home-icon:hover {
+   background: #0056b3;
+    }
+    
+    .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .itinerary {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .show {
+            display: block;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    
+    
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+  .state {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Hide any overflowing content */
+    padding: 20px;
+  }
+  .state h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #333;
+  }
+  .state p {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+  .image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .slideshow {
+    display: flex;
+    animation: slide 35s linear infinite; /* Adjust the duration as needed */
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Move the slideshow to the left */
+    }
+  }
+  .image-container img {
+    width: 500px; /* Set a fixed width for the images */
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent images from shrinking */
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 20px;
+  }
+  .link-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   
+  }
+  .link-btn:hover {
+    background-color: #ff4338;
+  }
+   .book-tour-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    
+  }
+  .book-tour-btn:hover {
+    background-color: #ff4338;
+  }
+  .booking-form {
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }  .booking-form input[type="text"],
+  .booking-form input[type="email"],
+  .booking-form input[type="date"],
+  .booking-form button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+  }
+    .fade-in-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fade 5s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+   @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  
+    .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+   .typing-text {
+    font-size: 40px; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    color: #333;
+    text-align: center;
+    margin-top: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange; /* The typewriter cursor */
+    animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+  
+</style>
+</head>
+
+<body>
+    <a href="index.php" class="home-icon">🏠</a>
+<div class="state">
+    
+  <div class="typing-text" id="typing-text"style="font-size: 3rem; font-weight: bold;">
+    
+   </div>
+   
+     <div class="image-container">
+    <div class="slideshow">
+      <img src="kl1.jpeg" alt="kl1">
+      <img src="kl2.jpeg" alt="kl2">
+       <img src="kl6.jpeg" alt="kl4">
+      <img src="kl4.jpeg" alt="kl4">
+      <img src="kl5.jpeg" alt="kl4">
+         <img src="kl3.jpeg" alt="kl3">
+     
+    </div>
+  
+       </div>
+    
+    
+    
+   <p>Kerala is well-known for its mesmerizing backwaters, ecotourism initiatives, scenic beauty, amazing beaches, and mouthwatering cuisine.
+</p>
+  <div class="links">
+      
+      
+
+    <div class="container">
+        <div class="button-container">
+            <button class="button" id="toggleItineraryBtn">Show Itinerary</button>
+        </div>
+        <div id="itinerary" class="itinerary">
+       <div class="day">
+            
+            <h2>Day 1: Arrival in Kochi</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Fly to Kochi International Airport.</p>
+                    <p><strong>Mode of Transport:</strong> Taxi from airport to hotel</p>
+                    <p><strong>Best Time to Visit:</strong> October to March</p>
+                    <p><strong>Description:</strong> Arrive in Kochi, also known as the "Queen of the Arabian Sea". Check into your hotel and explore the historical sites and backwaters of Fort Kochi.</p>
+                    <ul>
+                        <li>Check-in at hotel in Fort Kochi</li>
+                        <li>Visit Mattancherry Palace</li>
+                        <li>Explore Fort Kochi Beach</li>
+                        <li>Witness Chinese Fishing Nets</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 2: Munnar Hill Station</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Kochi to Munnar (Approx. 130 km).</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> September to May</p>
+                    <p><strong>Description:</strong> Travel to Munnar, a beautiful hill station known for its tea gardens and panoramic views of Western Ghats.</p>
+                    <ul>
+                        <li>Drive through scenic routes</li>
+                        <li>Visit Tea Gardens and Tea Museum</li>
+                        <li>Explore Mattupetty Dam</li>
+                        <li>Experience Echo Point and Photo Point</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 3: Alleppey Backwaters</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Munnar to Alleppey (Approx. 175 km).</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> August to February</p>
+                    <p><strong>Description:</strong> Experience the famous backwaters of Kerala in Alleppey. Enjoy a houseboat stay and witness the serene beauty of backwater villages.</p>
+                    <ul>
+                        <li>Check-in to Houseboat in Alleppey</li>
+                        <li>Cruise through backwater canals</li>
+                        <li>Enjoy traditional Kerala meals on houseboat</li>
+                        <li>Witness sunset over the backwaters</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 4: Thekkady Wildlife Sanctuary</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Alleppey to Thekkady (Approx. 140 km).</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> September to March</p>
+                    <p><strong>Description:</strong> Explore the wildlife and spice plantations of Thekkady. Engage in a jungle safari and experience the rich biodiversity.</p>
+                    <ul>
+                        <li>Visit Periyar Wildlife Sanctuary</li>
+                        <li>Enjoy a boat ride on Periyar Lake</li>
+                        <li>Explore Spice Plantations</li>
+                        <li>Witness Kathakali Performance in the evening</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 5: Departure from Kochi</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Thekkady to Kochi (Approx. 155 km).</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> Anytime</p>
+                    <p><strong>Description:</strong> Depart from Kochi with unforgettable memories of Kerala's natural beauty and cultural heritage.</p>
+                    <ul>
+                        <li>Check-out from hotel in Kochi</li>
+                        <li>Visit Jewish Synagogue and Dutch Palace</li>
+                        <li>Shopping in local markets</li>
+                        <li>Transfer to Kochi Airport for departure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+  </div>
+
+
+  <button id="kerala-btn" class="book-tour-btn" onclick="toggleBookingForm('kerala')">Book Kerala Tour</button>
+ 
+  <div id="kerala-booking-form" class="booking-form">
+       
+     
+    <h3>Kerala Tour Booking Form</h3>
+   
+   
+      <form id="bookForm" action="payments.php" method="post"> 
+          <button type="submit">Book Now</button>
+      </form>
+    <!-- Your booking form fields go here -->
+  </div>
+
+</div>
+    <script> 
+        
+        document.getElementById('toggleItineraryBtn').addEventListener('click', function() {
+            var itinerary = document.getElementById('itinerary');
+            itinerary.classList.toggle('show');
+        });  
+        function toggleBookingForm(city) {
+    const bookingForm = document.getElementById(city + "-booking-form");
+    if (bookingForm.style.display === "none") {
+      bookingForm.style.display = "block";
+    } else {
+      bookingForm.style.display = "none";
+    }
+  }
+  text =  "Welcome to Kerala!";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100); // Adjust the typing speed (milliseconds)
+    }
+  }
+
+ // Start typing when the page loads
+  window.onload = function() {
+    typeWriter();
+    };
+</script>
+</body>
+
+    </html>

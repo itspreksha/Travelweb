@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+         body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-icon {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        right: 20px; /* Adjust the left position as needed */
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        z-index: 1000; /* Ensure the icon is above other content */
+    }
+
+    .home-icon:hover {
+   background: #0056b3;
+    }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  animation: fadeInDown 1s ease;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Change color on hover */
+}
+
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+section p {
+  animation: fadeIn 1s ease;
+}
+  #flora-fauna img {
+    width: 400px; /* Set the width of the image */
+    height: 500px; /* Maintain aspect ratio */
+  }
+
+  #flora-fauna h2 a {
+    color: black;
+    text-align:left;
+  }
+  .form-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 10px; /* Gap between cells */
+  }
+  #Heritage-sites img {
+    width: 400px; /* Set the width of the image */
+    height: 500px; /* Maintain aspect ratio */
+  }
+
+  #Heritage-sites  h2 a {
+    color: black;
+    text-align:left;
+  }
+   #Religious img {
+    width: 400px; /* Set the width of the image */
+    height: 500px; /* Maintain aspect ratio */
+  }
+
+  #Religious h2 a {
+    color: black;
+    text-align:left;
+  }
+    #Adventure img {
+    width: 400px; /* Set the width of the image */
+    height: 500px; /* Maintain aspect ratio */
+  }
+
+  #Adventure h2 a {
+    color: black;
+    text-align:left;
+  }
+   
+    #Art-Music img {
+    width: 400px; /* Set the width of the image */
+    height: 500px; /* Maintain aspect ratio */
+  }
+
+  #Art-Music h2 a {
+    color: black;
+    text-align:left;
+  }
+  #Cuisine img {
+    width: 400px; /* Set the width of the image */
+    height: 500px; /* Maintain aspect ratio */
+  }
+
+  #Cuisine h2 a {
+    color: black;
+    text-align:left;
+  }
+  #Weekend-getaways img {
+    width: 400px; /* Set the width of the image */
+    height: 500px;
+    /* Maintain aspect ratio */
+  }
+
+  #Weekend-getaways h2 a {
+    color: black;
+    text-align:center;
+  }
+  .form-field {
+    margin-bottom: 10px; /* Space between fields */
+  }
+
+  .form-field label {
+    display: block; /* Make labels block-level for vertical alignment */
+    font-weight: bold;
+  }
+
+  .form-field input {
+    width: 100%; /* Take up full width */
+    padding: 5px;
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pick Your Trail</title>
+  
+</head>
+<body>
+    <a href="index.php" class="home-icon">🏠</a>
+  <header>
+    <h1>Pick Your Trail</h1>
+    <nav>
+      <ul>
+        <li><a href="flora&fauna.html">Flora & Fauna</a></li>
+        <li><a href="heritage.html">Heritage Sites</a></li>
+        <li><a href="religious sites.html">Religious</a></li>
+        <li><a href="adventure.html">Adventure</a></li>
+        <li><a href="art&music.html">Art & Music</a></li>
+        <li><a href="cuisine.html">Cuisine</a></li>
+        <li><a href="weekend getaway.html">Weekend Getaways</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+      <div class="form-container">  
+            <section id="flora-fauna">
+          <h2><a href="flora&fauna.html">Flora & Fauna</a></h2>
+      
+          <img src="floura-fauna.jpg" alt=" Floura-Fauna">
+     <div class="form-field"></div>
+   
+     </section>
+
+    <section id="Heritage-sites">
+     
+        <h2><a href="heritage.html">Heritage-sites</a></h2>
+     <img src="Heritage.jpg" alt=" Heritage-Site">
+    <div class="form-field"> </div><!-- Add images and descriptions here -->
+  </section>
+
+  <section id="Religious">
+        <h2><a href="religious sites.html#">Religious</a></h2>
+     <img src="Religious.jpg" alt=" Religious">
+   
+    <div class="form-field"></div>
+    <!-- Add images and descriptions here -->
+  </section>
+
+  <section id="Adventure">
+   <h2><a href="adventure.html">Adventure</a></h2>
+     <img src="Adventure.jpg" alt=" Adventure">
+   
+    <div class="form-field"></div>
+    <!-- Add images and descriptions here -->
+  </section>
+
+  <section id="Art-Music">
+    <h2><a href="art&music.html">Art-Music</a></h2>
+     <img src="Art and Music.jpg" alt=" Art-Music">
+   
+    <div class="form-field"></div>
+    <!-- Add images and descriptions here -->
+  </section>
+
+  <section id="Cuisine">
+       <h2><a href="cuisine.html">Cuisine</a></h2>
+     <img src="Cuisine.jpeg" alt="Cuisine">
+   
+    <div class="form-field"></div>
+    <!-- Add images and descriptions here -->
+  </section>
+
+  <section id="Weekend-getaways">
+     <h2><a href="weekend getaway.html">Weekend-getaways</a></h2>
+     <img src="Weekend-getaways.jpeg" alt="Weekend-getaways">
+   
+    <div class="form-field"></div>
+    <!-- Add images and descriptions here -->
+  </section>
+  </div>
+  <footer>
+    <!-- Add footer content here -->
+  </footer>
+</body>
+</html>

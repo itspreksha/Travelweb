@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maharashtra Tour Guide</title>
+<style>
+      body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-icon {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        z-index: 1000; /* Ensure the icon is above other content */
+    }
+
+    .home-icon:hover {
+   background: #0056b3;
+    }
+    .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .itinerary {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .show {
+            display: block;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    
+    
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+  .state {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Hide any overflowing content */
+    padding: 20px;
+  }
+  .state h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #333;
+  }
+  .state p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+  .image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .slideshow {
+    display: flex;
+    animation: slide 35s linear infinite; /* Adjust the duration as needed */
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Move the slideshow to the left */
+    }
+  }
+  .image-container img {
+    width: 500px; /* Set a fixed width for the images */
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent images from shrinking */
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 20px;
+  }
+  .link-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .link-btn:hover {
+    background-color: #ff4338;
+  }
+   .book-tour-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  .book-tour-btn:hover {
+    background-color: #ff4338;
+  }
+  .booking-form {
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }  .booking-form input[type="text"],
+  .booking-form input[type="email"],
+  .booking-form input[type="date"],
+  .booking-form button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+  }
+    .fade-in-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fade 5s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+   @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  
+    .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+   .typing-text {
+    font-size: 40px; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    color: #333;
+    text-align: center;
+    margin-top: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange; /* The typewriter cursor */
+    animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+  
+</style>
+</head>
+
+<body>
+    <a href="index.php" class="home-icon">🏠</a>
+    
+<div class="state">
+    
+  <div class="typing-text" id="typing-text"style="font-size: 3rem; font-weight: bold;">
+    
+    </div>
+   
+     <div class="image-container">
+    <div class="slideshow">
+      <img src="m1.jpeg" alt="m1">
+      <img src="m2.jpeg" alt="m2">
+      <img src="pu3.jpeg" alt="pu3">
+      <img src="m4.jpeg" alt="m4">
+      <img src="pu2.jpeg" alt="p4">
+      <img src="pu4.jpeg" alt="pu4">
+     
+    </div>
+  
+       </div>
+    
+    
+    
+   <p>Maharashtra is one of India's largest commercial and industrial centres, which has led to its being called the gateway of India.</p>
+  <div class="links">
+      
+    <a href="#mumbai" class="link-btn">Explore Mumbai</a>
+    <a href="#pune" class="link-btn">Discover Pune</a>
+    
+  </div>
+</div>
+    
+    
+    <div class="container">
+        <div class="button-container">
+            <button class="button" id="toggleItineraryBtn">Show Itinerary</button>
+        </div>
+        <div id="itinerary" class="itinerary">
+       <div class="day">
+      
+     
+  
+     
+     <div class="container">
+        <h1>Maharashtra Itinerary</h1>
+        
+   
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 1: Mumbai to Lonavala</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Mumbai to Lonavala via Mumbai-Pune Expressway.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Train</p>
+                    <p><strong>Best Time to Visit:</strong> June to September (Monsoon)</p>
+                    <p><strong>Description:</strong> Begin your journey from Mumbai and head towards the picturesque hill station of Lonavala. Enjoy the lush greenery, waterfalls, and serene landscapes.</p>
+                    <ul>
+                        <li>Visit Bhushi Dam</li>
+                        <li>Explore Tiger's Point</li>
+                        <li>Enjoy local street food</li>
+                        <li>Stay overnight in Lonavala</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 2: Lonavala to Mahabaleshwar</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Lonavala to Mahabaleshwar via NH48.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> October to February</p>
+                    <p><strong>Description:</strong> Journey from Lonavala to the charming hill station of Mahabaleshwar, known for its strawberry farms and stunning viewpoints.</p>
+                    <ul>
+                        <li>Explore Venna Lake</li>
+                        <li>Visit Elephant's Head Point</li>
+                        <li>Enjoy a horse ride to Pratapgad Fort</li>
+                        <li>Try fresh strawberries and local delicacies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 3: Mahabaleshwar to Pune</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Mahabaleshwar to Pune via NH48.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Taxi</p>
+                    <p><strong>Best Time to Visit:</strong> September to March</p>
+                    <p><strong>Description:</strong> Travel to Pune, the cultural capital of Maharashtra. Explore the city's historical sites, vibrant markets, and delicious food.</p>
+                    <ul>
+                        <li>Visit Shaniwar Wada</li>
+                        <li>Explore Aga Khan Palace</li>
+                        <li>Shop at Pune's famous markets</li>
+                        <li>Enjoy local Maharashtrian cuisine for dinner</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 4: Pune to Nashik</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Pune to Nashik via NH60.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Bus</p>
+                    <p><strong>Best Time to Visit:</strong> October to March</p>
+                    <p><strong>Description:</strong> Journey to Nashik, known for its vineyards and temples. Explore the wine culture and religious sites in this beautiful city.</p>
+                    <ul>
+                        <li>Visit Sula Vineyards</li>
+                        <li>Explore Trimbakeshwar Temple</li>
+                        <li>Enjoy a boat ride in Gangapur Dam</li>
+                        <li>Try local wines and cuisine</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="day">
+                <h2 class="day-title" onclick="toggleAccordion(this)">Day 5: Nashik to Mumbai</h2>
+                <div class="day-content">
+                    <p><strong>Preferred Route:</strong> Drive from Nashik to Mumbai via NH160 and NH3.</p>
+                    <p><strong>Mode of Transport:</strong> Self-drive or Train</p>
+                    <p><strong>Best Time to Visit:</strong> November to February</p>
+                    <p><strong>Description:</strong> Return journey to Mumbai, the bustling metropolis. Explore the city's iconic landmarks, vibrant markets, and diverse culture.</p>
+                    <ul>
+                        <li>Visit Gateway of India</li>
+                        <li>Explore Marine Drive</li>
+                        <li>Shop at Colaba Causeway</li>
+                        <li>Enjoy a sunset at Bandra Bandstand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+  
+       </div>
+        </div>
+    </div>
+    
+    
+     
+    
+    
+  
+
+    <div id="mumbai" class="state">
+    <h2>Mumbai</h2>
+
+     <div class="image-container">
+    <div class="slideshow">
+      <img src="m4.jpeg" alt="mu1">
+      <img src="m2.jpeg" alt="mu2">
+      <img src="m3.jpeg" alt="mu3">
+      <img src="m2.jpeg" alt="mu4">
+      <img src="m2.jpeg" alt="m2">
+      <img src="m4.jpeg" alt="m4">
+      
+    </div>
+         
+  </div>
+
+    <p>Mumbai lies on the Konkan coast on the west coast of India and has a deep natural harbour.</p>
+  <button id="mumbai-btn" class="book-tour-btn" onclick="toggleBookingForm('mumbai')">Book Mumbai Tour</button>
+  <div id="mumbai-booking-form" class="booking-form">
+    <h3>Mumbai Tour Booking Form</h3>
+  
+      <form id="bookForm" action="payments.php" method="post"> 
+          <button type="submit">Book Now</button>
+      </form>
+    <!-- Your booking form fields go here -->
+  </div>
+</div>
+
+    </div>
+   
+<div id="pune" class="state">
+  <h2>Pune</h2>
+  <div class="image-container">
+    <div class="slideshow">
+      <img src="pu1.jpeg" alt="pu1">
+      <img src="m1.jpeg" alt="m1">
+      <img src="pu4.jpeg" alt="pu4">
+       <img src="pu3.jpeg" alt="pu3">
+      <img src="pu5.jpeg" alt="pu5">
+      <img src="pu2.jpeg" alt="pu2">
+    </div>
+ </div>
+  <p>Pune exemplifies an indigenous Marathi culture and ethos, in which education, arts and crafts, and theatres are given due prominence.</p>
+
+  <button id="pune-btn" class="book-tour-btn" onclick="toggleBookingForm('pune')">Book Pune Tour</button>
+  <div id="pune-booking-form" class="booking-form">
+    <h3>Pune Tour Booking Form</h3>
+     
+      <form id="bookForm" action="payments.php" method="post"> 
+          <button type="submit">Book Now</button>
+      </form>
+    <!-- Your booking form fields go here -->
+  </div>
+</div>
+ 
+ 
+    <script> 
+        
+    document.getElementById('toggleItineraryBtn').addEventListener('click', function() {
+            var itinerary = document.getElementById('itinerary');
+            itinerary.classList.toggle('show');
+        })
+    function toggleBookingForm(city) {
+    const bookingForm = document.getElementById(city + "-booking-form");
+    if (bookingForm.style.display === "none") {
+      bookingForm.style.display = "block";
+    } else {
+      bookingForm.style.display = "none";
+    }
+  }
+  text =  "Welcome to Maharashtra!";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100); // Adjust the typing speed (milliseconds)
+    }
+  }
+
+ // Start typing when the page loads
+  window.onload = function() {
+    typeWriter();
+    };
+</script>
+</body>
+
+    </html>
+    

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Bookings</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    padding: 20px;
+}
+
+#search-section {
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#hotel-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20
+</style>
+</head>
+<body>
+    <header>
+        <h1>Hotel Recommendations</h1>
+    </header>
+
+    <main>
+        <section id="search-section">
+            <h2>Search Hotels</h2>
+            <div class="search-form">
+                <form action="index.php" method="GET">
+                    <select name="city">
+                        <option value="" disabled selected>Select City</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                    <select name="adults">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                        <option value="5">5 Adults</option>
+                    </select>
+                    <select name="room_type">
+                        <option value="AC">AC</option>
+                        <option value="Non-AC">Non-AC</option>
+                    </select>
+                    <select name="star_rating">
+                        <option value="3">3 Star</option>
+                        <option value="4">4 Star</option>
+                        <option value="5">5 Star</option>
+                    </select>
+                    <button type="submit" name="search">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="results-section">
+            <?php
+            if (isset($_GET['search'])) {
+                $city = $_GET['city'] ?? '';
+                echo '<h2>Hotel Recommendations for ' . $city . '</h2>';
+                displayHotels(getFilteredHotels());
+            }
+            ?>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<?php
+function getFilteredHotels() {
+    $city = $_GET['city'] ?? '';
+    $adults = $_GET['adults'] ?? 1;
+    $roomType = $_GET['room_type'] ?? 'AC';
+    $starRating = $_GET['star_rating'] ?? 3;
+
+    $hotels = [
+        [
+            'name' => 'Sample Hotel 1',
+            'city' => 'Delhi',
+            'address' => '123 Main St, Delhi',
+            'price' => 200,
+            'currency' => 'INR',
+            'starRating' => 4,
+            'roomType' => 'AC',
+            'adults' => 2,
+            'image' => 'https://example.com/image1.jpg'
+        ],
+        [
+            'name' => 'Sample Hotel 2',
+            'city' => 'Mumbai',
+            'address' => '456 Main St, Mumbai',
+            'price' => 250,
+            'currency' => 'INR',
+            'starRating' => 5,
+            'roomType' => 'Non-AC',
+            'adults' => 3,
+            'image' => 'https://example.com/image2.jpg'
+        ],
+        [
+            'name' => 'Sample Hotel 3',
+            'city' => 'Bangalore',
+            'address' => '789 Main St, Bangalore',
+            'price' => 220,
+            'currency' => 'INR',
+            'starRating' => 3,
+            'roomType' => 'AC',
+            'adults' => 4,
+            'image' => 'https://example.com/image3.jpg'
+        ],
+        [
+            'name' => 'Sample Hotel 4',
+            'city' => 'Chennai',
+            'address' => '101 Main St, Chennai',
+            'price' => 230,
+            'currency' => 'INR',
+            'starRating' => 4,
+            'roomType' => 'Non-AC',
+            'adults' => 2,
+            'image' => 'https://example.com/image4.jpg'
+        ],
+        [
+            'name' => 'Sample Hotel 5',
+            'city' => 'Kolkata',
+            'address' => '202 Main St, Kolkata',
+            'price' => 210,
+            'currency' => 'INR',
+            'starRating' => 5,
+            'roomType' => 'AC',
+            'adults' => 3,
+            'image' => 'https://example.com/image5.jpg'
+        ]
+    ];
+
+    $filteredHotels = array_filter($hotels, function($hotel) use ($city, $adults, $roomType, $starRating) {
+        return strtolower($hotel['city']) === strtolower($city) &&
+               $hotel['adults'] >= $adults &&
+               $hotel['roomType'] === $roomType &&
+               $hotel['starRating'] >= $starRating;
+    });
+
+    // Sort hotels by price and star rating
+    usort($filteredHotels, function($a, $b) {
+        return $a['price'] - $b['price'] ?: $b['starRating'] - $a['starRating'];
+    });
+
+    return $filteredHotels;
+}
+
+function displayHotels($hotels) {
+    echo '<div id="hotel-list">';
+    foreach ($hotels as $hotel) {
+        echo '
+            <div class="hotel-card">
+                <img src="' . $hotel['image'] . '" alt="' . $hotel['name'] . '">
+                <h3>' . $hotel['name'] . '</h3>
+                <p>' . $hotel['address'] . '</p>
+                <p>Price: ' . $hotel['price'] . ' ' . $hotel['currency'] . '</p>
+                <p>Star Rating: ' . $hotel['starRating'] . '</p>
+            </div>
+        ';
+    }
+    echo '</div>';
+}
+?>

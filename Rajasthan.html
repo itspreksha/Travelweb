@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajasthan Tour Guide</title>
+<style> body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-icon {
+        position: fixed;
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.8);
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        z-index: 1000; /* Ensure the icon is above other content */
+    }
+
+    .home-icon:hover {
+   background: #0056b3;
+    }
+      .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .itinerary {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .show {
+            display: block;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+  .state {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Hide any overflowing content */
+    padding: 20px;
+  }
+  .state h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    color: #333;
+  }
+  .state p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #666;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto 20px;
+  }
+  .image-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .slideshow {
+    display: flex;
+    animation: slide 20s linear infinite; /* Adjust the duration as needed */
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Move the slideshow to the left */
+    }
+  }
+  .image-container img {
+    width: 500px; /* Set a fixed width for the images */
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent images from shrinking */
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 20px;
+  }
+  .link-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .link-btn:hover {
+    background-color: #ff4338;
+  }
+   .book-tour-btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  .book-tour-btn:hover {
+    background-color: #ff4338;
+  }
+  .booking-form {
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }  .booking-form input[type="text"],
+  .booking-form input[type="email"],
+  .booking-form input[type="date"],
+  .booking-form button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+  }
+    .fade-in-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fade 5s ease-in-out infinite; /* Adjust the duration as needed */
+  }
+   @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  
+    .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+  }
+   .typing-text {
+    font-size: 40px; /* Bigger font size */
+    font-weight: bold; /* Bold text */
+    color: #333;
+    text-align: center;
+    margin-top: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange; /* The typewriter cursor */
+    animation: typing 3s steps(30, end), blink-caret .5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+  
+</style>
+</head>
+<body>
+
+<a href="index.php" class="home-icon">🏠</a>
+    <div class="state">
+  <div class="typing-text" id="typing-text"style="font-size: 3rem; font-weight: bold;">
+
+        <u><h2></h2></u></div>
+  <div class="image-container">
+    <div class="slideshow">
+      <img src="Rajasthan1.jpg" alt="Rajasthan Image 1">
+      <img src="Rajasthan2.jpg" alt="Rajasthan Image 2">
+      <img src="rajasthan3.jpg" alt="Rajasthan Image 3">
+      <img src="rajasthan4.jpg" alt="Rajasthan Image 4">
+      <img src="rajasthan5.jpg" alt="Rajasthan Image 5">
+      <img src="rajasthan6.jpg" alt="Rajasthan Image 6">
+    </div>
+  </div>
+  <p>Rajasthan, the land of kings, is renowned for its magnificent palaces, forts, and vibrant culture.</p>
+  <div class="links">
+    <a href="#udaipur" class="link-btn">Explore Udaipur</a>
+    <a href="#jaipur" class="link-btn">Discover Jaipur</a>
+    <a href="#jaisalmer" class="link-btn">Experience Jaisalmer</a>
+  </div>
+</div></div> <div class="container">
+        <div class="button-container">
+            <button class="button" id="toggleItineraryBtn">Show Itinerary</button>
+        </div>
+        <div id="itinerary" class="itinerary">
+       <div class="day">
+     <h1>Rajasthan Itinerary</h1>
+
+  <!-- Day 1: Arrival in Jaipur -->
+  <h2>Day 1: Arrival in Jaipur</h2>
+  <h3>Morning</h3>
+  <ul>
+    <li>Arrive in Jaipur</li>
+    <li>Check-in at your hotel</li>
+  </ul>
+  <h3>Afternoon</h3>
+  <ul>
+    <li>Have lunch at a local restaurant</li>
+    <li>Visit the City Palace</li>
+    <li>Explore Jantar Mantar</li>
+  </ul>
+  <h3>Evening</h3>
+  <ul>
+    <li>Enjoy shopping in the local markets</li>
+    <li>Dinner at a traditional Rajasthani restaurant</li>
+  </ul>
+
+  <!-- Day 2: Sightseeing in Jaipur -->
+  <h2>Day 2: Sightseeing in Jaipur</h2>
+  <h3>Morning</h3>
+  <ul>
+    <li>Visit the Amber Fort</li>
+    <li>Enjoy an elephant ride (optional)</li>
+  </ul>
+  <h3>Afternoon</h3>
+  <ul>
+    <li>Explore Hawa Mahal</li>
+    <li>Visit Jal Mahal</li>
+  </ul>
+  <h3>Evening</h3>
+  <ul>
+    <li>Attend a cultural show</li>
+    <li>Enjoy dinner at a rooftop restaurant with a view of the city</li>
+  </ul>
+
+  <!-- Day 3: Travel to Jodhpur -->
+  <h2>Day 3: Travel to Jodhpur</h2>
+  <h3>Morning</h3>
+  <ul>
+    <li>Drive to Jodhpur</li>
+    <li>Stop at Pushkar en route</li>
+  </ul>
+  <h3>Afternoon</h3>
+  <ul>
+    <li>Explore the Brahma Temple in Pushkar</li>
+    <li>Have lunch at a local restaurant</li>
+  </ul>
+  <h3>Evening</h3>
+  <ul>
+    <li>Arrive in Jodhpur</li>
+    <li>Check-in at your hotel</li>
+  </ul>
+
+  <!-- Day 4: Sightseeing in Jodhpur -->
+  <h2>Day 4: Sightseeing in Jodhpur</h2>
+  <h3>Morning</h3>
+  <ul>
+    <li>Visit Mehrangarh Fort</li>
+    <li>Explore Jaswant Thada</li>
+  </ul>
+  <h3>Afternoon</h3>
+  <ul>
+    <li>Have lunch at a local restaurant</li>
+    <li>Visit Umaid Bhawan Palace</li>
+  </ul>
+  <h3>Evening</h3>
+  <ul>
+    <li>Enjoy a relaxing evening at your hotel</li>
+    <li>Optional: Explore the local markets</li>
+  </ul>
+
+  <!-- Day 5: Departure from Jodhpur -->
+  <h2>Day 5: Departure from Jodhpur</h2>
+  <h3>Morning</h3>
+  <ul>
+    <li>Check-out from your hotel</li>
+    <li>Transfer to the airport or railway station</li>
+  </ul>
+  <h3>Afternoon</h3>
+  <ul>
+    <li>Departure from Jodhpur</li>
+  </ul>
+       </div></div></div>
+<div id="udaipur" class="state">
+  <h2>Udaipur</h2>
+  <div class="image-container">
+    <div class="slideshow">
+      <img src="u1.jpg" alt="Udaipur Image 1">
+      <img src="u2.jpg" alt="Udaipur Image 2">
+      <img src="u3.jpg" alt="Udaipur Image 3">
+       <img src="u4.jpg" alt="Udaipur Image 1">
+      <img src="u5.jpg" alt="Udaipur Image 2">
+      <img src="u6.jpg" alt="Udaipur Image 3">
+    </div>
+ </div>
+  <p>Udaipur, the city of lakes, is known for its stunning palaces, scenic lakes, and romantic ambiance.</p>
+
+  <button id="udaipur-btn" class="book-tour-btn" onclick="toggleBookingForm('udaipur')">Book Udaipur Tour</button>
+  <div id="udaipur-booking-form" class="booking-form">
+    <h3>Udaipur Tour Booking Form</h3>
+    
+      <form id="bookForm" action="payments.php" method="post"> 
+          <button type="submit">Book Now</button>
+      </form>
+  </div>
+</div>
+<div id="jaipur" class="state">
+  <h2>Jaipur</h2>
+  <div class="image-container">
+    <div class="slideshow">
+      <img src="j1.jpg" alt="Jaipur Image 1">
+      <img src="j2.jpg" alt="Jaipur Image 2">
+      <img src="j3.jpg" alt="Jaipur Image 3">
+       <img src="j4.jpg" alt="Jaipur Image 1">
+      <img src="j5.jpg" alt="Jaipur Image 2">
+      <img src="j6.jpg" alt="Jaipur Image 3">
+    </div>
+  </div>
+
+
+    <p>Jaipur, the pink city, offers a fascinating blend of history, culture, and vibrant colors.</p>
+  <button id="jaipur-btn" class="book-tour-btn" onclick="toggleBookingForm('jaipur')">Book Jaipur Tour</button>
+  <div id="jaipur-booking-form" class="booking-form">
+    <h3>Jaipur Tour Booking Form</h3>
+   
+      <form id="bookForm" action="payments.php" method="post"> 
+          <button type="submit">Book Now</button>
+      </form>
+  </div>
+    <!-- Your booking form fields go here -->
+
+
+  </div>
+<div id="jaisalmer" class="state">
+  <h2>Jaisalmer</h2>
+  <div class="image-container">
+    <div class="slideshow">
+      <img src="ja1.jpg" alt="jaisalmer Image 1">
+      <img src="ja2.jpg" alt="jaisalmer Image 2">
+      <img src="ja3.jpg" alt="jaisalmer Image 3">
+        <img src="ja4.jpg" alt="jaisalmer Image 4">
+      <img src="ja5.jpg" alt="jaisalmer Image 5">
+      <img src="ja6.jpg" alt="jaisalmer Image 6">
+    </div>
+  </div>
+  <p>Jaisalmer is a former medieval trading center and a princely state in the western Indian state of Rajasthan, in the heart of the Thar Desert. Known as the "Golden City.</p>
+   <button class="book-tour-btn" onclick="toggleBookingForm('jaisalmer')">Book Jaisalmer Tour</button>
+  <div id="jaisalmer-booking-form" class="booking-form">
+    <h3>Jaisalmer Tour Booking Form</h3>
+    
+      <form id="bookForm" action="payments.php" method="post"> 
+          <button type="submit">Book Now</button>
+      </form>  
+</div>
+</div> 
+    <script> 
+     document.getElementById('toggleItineraryBtn').addEventListener('click', function() {
+            var itinerary = document.getElementById('itinerary');
+            itinerary.classList.toggle('show');
+        });    
+    function toggleBookingForm(city) {
+    const bookingForm = document.getElementById(city + "-booking-form");
+    if (bookingForm.style.display === "none") {
+      bookingForm.style.display = "block";
+    } else {
+      bookingForm.style.display = "none";
+    }
+  }
+  text =  "Welcome to Rajasthan";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100); // Adjust the typing speed (milliseconds)
+    }
+  }
+
+  // Start typing when the page loads
+  window.onload = function() {
+    typeWriter();
+  };
+</script>
+</body>
+</html>
